@@ -54,6 +54,23 @@ services:
     networks:
       - app-network
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_PORT: 3306
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: vw260810
+    ports:
+    - "8000:80"
+    restart: always
+    depends_on: 
+    - db
+    networks: 
+    - app-network
+
+
+
 #Docker Networks
 networks:
   app-network:
