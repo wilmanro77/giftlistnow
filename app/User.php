@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace GiftListNow;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'last_name', 'name_event', 'date_start', 'date_end', 'name_boyfriend', 'last_name_boyfriend', 'name_girlfriend', 'last_name_girlfriend', 'email', 'password',
+        'name', 'last_name', 'event_name', 'start_date', 'end_date', 'event_code', 'email', 'password',
     ];
 
     /**

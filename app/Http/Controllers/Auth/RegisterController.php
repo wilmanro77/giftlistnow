@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace GiftListNow\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use GiftListNow\User;
+use GiftListNow\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -51,38 +51,36 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            'name_event' => ['required', 'string', 'max:255'],
-            'date_start' => ['required', 'string', 'max:255'],
-            'date_end' => ['required', 'string', 'max:255'],
-            'name_boyfriend' => ['required', 'string', 'max:255'],
-            'last_name_boyfriend' => ['required', 'string', 'max:255'],
-            'name_girlfriend' => ['required', 'string', 'max:255'],
-            'last_name_girlfriend' => ['required', 'string', 'max:255'],
+            'event_name' => ['required', 'string', 'max:255'],
+            'start_date' => ['required', 'string', 'max:255'],
+            'end_date' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
+    protected function generateCodeEvent()
+    {
+        $codeEvent = mt_rand(1000, 9999);
 
+        return $codeEvent;
+    }
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \GiftListNow\User
      */
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
-            'name_event' => $data['name_event'],
-            'date_start' => $data['date_start'],
-            'date_end' => $data['date_end'],
-            'name_boyfriend' => $data['name_boyfriend'],
-            'last_name_boyfriend' => $data['last_name_boyfriend'],
-            'name_girlfriend' => $data['name_girlfriend'],
-            'last_name_girlfriend' => $data['last_name_girlfriend'],
+            'event_name' => $data['event_name'],
+            'start_date' => $data['start_date'],
+            'end_date' => $data['end_date'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'event_code' => $this->generateCodeEvent(),
+            'password' => Hash::make($data['password'])
         ]);
     }
 }
