@@ -72,12 +72,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //dd($data["event_name"]);
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
-            'event_name' => $data['event_name'],
-            'start_date' => $data['start_date'],
-            'end_date' => $data['end_date'],
+            'name_event' => $data['event_name'],
+            'date_start' => $data['start_date'],
+            'date_end' => $data['end_date'],
             'email' => $data['email'],
             'event_code' => $this->generateCodeEvent(),
             'password' => Hash::make($data['password'])
