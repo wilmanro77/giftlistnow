@@ -25,8 +25,8 @@
                         @foreach ($products as $producto)
                         <tr>
                             <td>{{$producto->id }}</td>
-                            <td>{{$producto->nombre }}</td>
-                            <td>{{$producto->precio }}</td>
+                            <td>{{$producto->name }}</td>
+                            <td>{{$producto->price }}</td>
                             <td><input type="checkbox" name="product-{{ $producto->id }}" class="btn btn-info"></td>
                         </tr>
                         @endforeach

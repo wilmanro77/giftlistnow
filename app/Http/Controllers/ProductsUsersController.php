@@ -16,7 +16,7 @@ class ProductsUsersController extends Controller
     {
         //
         $products = DB::table('products_users')
-            ->join('products', 'products_users.id_producto', '=', 'products.id')
+            ->join('products', 'products_users.id_product', '=', 'products.id')
             ->select('products.*')
             ->get();
             return view("userTable", ["products"=>$products]);
@@ -47,8 +47,8 @@ class ProductsUsersController extends Controller
             if(strpos($key, 'product') === 0){
                 $productID = explode("-", $key)[1];
                 $usrProd = new products_users();
-                $usrProd->id_usuario = auth()->user()->id;
-                $usrProd->id_producto = $productID;
+                $usrProd->id_user = auth()->user()->id;
+                $usrProd->id_product = $productID;
                 $usrProd->save();
             }
         }

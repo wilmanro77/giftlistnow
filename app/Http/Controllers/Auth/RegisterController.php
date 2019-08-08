@@ -76,9 +76,9 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
-            'name_event' => $data['event_name'],
-            'date_start' => $data['start_date'],
-            'date_end' => $data['end_date'],
+            'event_name' => $data['event_name'],
+            'start_date' => $data['start_date'],
+            'end_date' => $data['end_date'],
             'email' => $data['email'],
             'event_code' => $this->generateCodeEvent(),
             'password' => Hash::make($data['password'])
