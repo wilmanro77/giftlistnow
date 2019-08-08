@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductsUsersTable extends Migration
+class ProductsUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -19,9 +19,6 @@ class CreateProductsUsersTable extends Migration
             $table->foreign('id_product')->references('id')->on('products')->onDelete('cascade');
             $table->unsignedBigInteger("id_user");
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            
-            
-            
             $table->timestamps();
         });
     }
