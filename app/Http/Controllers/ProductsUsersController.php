@@ -17,6 +17,7 @@ class ProductsUsersController extends Controller
         //
         $products = DB::table('products_users')
             ->join('products', 'products_users.id_product', '=', 'products.id')
+            ->where("products_users.id_user", "=", auth()->user()->id)
             ->select('products.*')
             ->get();
             return view("userTable", ["products"=>$products]);
@@ -64,9 +65,19 @@ class ProductsUsersController extends Controller
      * @param  \GiftListNow\products_users  $products_users
      * @return \Illuminate\Http\Response
      */
-    public function show(products_users $products_users)
+    public function show(products_users $products_users, $id)
     {
         //
+        $user = DB::table("users")->select("*")->where("event_code", "=", $id)->first();
+        if (empty($user)) {
+            return redirect("/main-table");
+        }
+        $products = DB::table('products_users')
+            ->join('products', 'products_users.id_product', '=', 'products.id')
+            ->where("products_users.id_user", "=", $user->id)
+            ->select('products.*')
+            ->get();
+            return view("userTable", ["products"=>$products]);
     }
 
     /**
@@ -102,4 +113,30 @@ class ProductsUsersController extends Controller
     {
         //
     }
+    public function findByCode(Request $request)
+    {
+        //
+        $code = $request->codeSearch;
+        $user = DB::table("users")->select("*")->where("event_code", "=", $code)->first();
+        if (empty($user)) {
+            return redirect("/home")->withErrors(['search'=> 'Code not found']);
+        }
+        $products = DB::table('products_users')
+            ->join('products', 'products_users.id_product', '=', 'products.id')
+            ->where("products_users.id_user", "=", $user->id)
+            ->select('products.*')
+            ->get();
+            return view("userTable", ["products"=>$products]);
+
+    }
+
+    public function process(Request $request)
+    {
+        //
+        return json_encode($request->product);
+
+    }
+
+    
+
 }

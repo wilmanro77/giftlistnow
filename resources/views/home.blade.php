@@ -5,12 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Your event code is {{auth()->user()->event_code}}</div>
+                <div class="card-header">Your event code is <a href="{{ route('user-products.show', auth()->user()->event_code) }}">{{auth()->user()->event_code}}</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
+                        </div>
+                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            {{ $errors->first("search") }}
                         </div>
                     @endif
                     <div class="container">
@@ -36,6 +41,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

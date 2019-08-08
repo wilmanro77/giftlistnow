@@ -12,11 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('/auth/login');
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource("/main-table", "ProductsController");
-Route::resource("/user-products", "ProductsUsersController");
+Route::resource("/user-products", "ProductsUsersController")
+	 ; //login required
+Route::post("/find-by-code", "ProductsUsersController@findByCode")
+	 ->name('find-code');//login required
+Route::post("/process", "ProductsUsersController@process")
+	 ->name('process'); //login required
