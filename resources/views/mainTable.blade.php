@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <a class="btn btn-info stretched-link my-2" href="{{route('main-tabla.create')}}">Añadir Producto</a>
+            <a class="btn btn-info stretched-link my-2" href="{{route('main-table.create')}}">Añadir Producto</a>
         </div>
         <div class="col-md-12">
                 <h1>Main Table</h1>
@@ -22,11 +22,11 @@
                         
                     </thead>
                     <tbody>
-                        @foreach ($productos as $producto)
+                        @foreach ($products as $producto)
                         <tr>
                             <td>{{$producto->id }}</td>
-                            <td>{{$producto->nombre }}</td>
-                            <td>{{$producto->precio }}</td>
+                            <td>{{$producto->name }}</td>
+                            <td>{{$producto->price }}</td>
                             <td><input type="checkbox" name="product-{{ $producto->id }}" class="btn btn-info"></td>
                         </tr>
                         @endforeach
