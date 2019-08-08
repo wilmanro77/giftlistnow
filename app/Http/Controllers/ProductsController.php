@@ -2,11 +2,11 @@
 
 namespace GiftListNow\Http\Controllers;
 
-use GiftListNow\productos;
+use GiftListNow\products;
 use Illuminate\Http\Request;
 
 
-class ProductosController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        $productos = productos::all();
+        $products = products::all();
 
-        return view("mainTable", ["productos"=>$productos]);
+        return view("mainTable", ["products"=>$products]);
     }
 
     /**
@@ -44,20 +44,20 @@ class ProductosController extends Controller
             'nombre'=>'required',
             'precio'=>'required'
         ]);
-        $producto = new productos();
+        $producto = new products();
         $producto->nombre = $request->nombre;
         $producto->precio = $request->precio;
         $producto->save();
-        return redirect("/main-tabla");
+        return redirect("/main-table");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \GiftListNow\productos  $productos
+     * @param  \GiftListNow\products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(productos $productos)
+    public function show(products $products)
     {
         //
         
@@ -66,10 +66,10 @@ class ProductosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \GiftListNow\productos  $productos
+     * @param  \GiftListNow\products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit(productos $productos)
+    public function edit(products $products)
     {
         //
     }
@@ -78,10 +78,10 @@ class ProductosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \GiftListNow\productos  $productos
+     * @param  \GiftListNow\products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, productos $productos)
+    public function update(Request $request, products $products)
     {
         //
     }
@@ -89,10 +89,10 @@ class ProductosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \GiftListNow\productos  $productos
+     * @param  \GiftListNow\products  $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy(productos $productos)
+    public function destroy(products $products)
     {
         //
     }

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8"></div>
         <div class="col-md-8">
-                <form action="{{route('main-tabla.store')}}" method="POST">
+                <form action="{{route('main-table.store')}}" method="POST">
                         @csrf <!-- {{ csrf_field() }} -->
                     <label for="nombre">Nombre: </label>
                     <input type="text" class="form-control" name="nombre" id="nombre">

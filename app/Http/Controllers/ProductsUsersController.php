@@ -15,11 +15,11 @@ class ProductsUsersController extends Controller
     public function index()
     {
         //
-        $productos = DB::table('products_users')
-            ->join('productos', 'products_users.id_producto', '=', 'productos.id')
-            ->select('productos.*')
+        $products = DB::table('products_users')
+            ->join('products', 'products_users.id_producto', '=', 'products.id')
+            ->select('products.*')
             ->get();
-            return view("userTable", ["productos"=>$productos]);
+            return view("userTable", ["products"=>$products]);
     }
 
     /**
@@ -41,6 +41,7 @@ class ProductsUsersController extends Controller
     public function store(Request $request)
     {
         //
+        DB::table('products_users')->where('id_user', '=', auth()->user()->id)->delete();
         foreach ($request->input() as $key => $value) {
             
             if(strpos($key, 'product') === 0){

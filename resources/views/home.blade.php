@@ -22,7 +22,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">Create or Edit Gift List</h5>
                                             <p class="card-text">Lest go to create your gift list.</p>
-                                            <a href="#" class="btn btn-primary">GO</a>
+                                            <a href="/main-table" class="btn btn-primary">GO</a>
                                         </div>
                                     </div>
                                 </div>
