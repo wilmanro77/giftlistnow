@@ -27,7 +27,11 @@ $factory->define(User::class, function (Faker $faker) {
         'event_code' => "9999",
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
+        'remember_token' => Str::random(10)];
+    });
+
+$factory->define(User::class, function (Faker $faker) {
+        return [
         'name' => "Wilman",
         'last_name' => "Rojas",
         'email' => "wrojas@giftlistnow.com",
@@ -36,7 +40,7 @@ $factory->define(User::class, function (Faker $faker) {
         'end_date' => "2019-12-31 23:59:59",  
         'event_code' => "9998",
         'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
+        'password' => Hash::make("12qwaszx"),
+        'remember_token' => Str::random(10)
     ];
 });
