@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource("/main-table", "ProductsController");
-Route::resource("/user-products", "ProductsUsersController");
+Route::resource("/user-products", "ProductsUsersController")
+	 ->middleware("auth"); //login required
