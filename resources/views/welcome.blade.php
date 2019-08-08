@@ -102,9 +102,11 @@
                         </div>
                     </div>
                 </div>
+                <!--
                 <div class="links">
                         <a href="./main-table" class="m-b-md">Tabla principal</a>
                 </div>
+            -->
             </div>
         </div>
     </body>
