@@ -10,6 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+            <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+
         <style>
             html, body {
                 background-color: #fff;
@@ -83,9 +86,24 @@
                 <div class="title m-b-md">
                     Gift list now
                 </div>
+                <div class="col-sm-12 my-2">
+                    <div class="card" >
+                        
+                        <div class="card-body">
+                            <form action="{{route('find-code')}}" method="POST">
+                                @csrf <!-- {{ csrf_field() }} -->
 
+                                <h5 class="card-title">Code</h5>
+                                <div class="active-green-3 active-green-4 mb-4">
+                                  <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="codeSearch">
+                                </div>
+                                <input type="submit" name="Search" class="btn btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="links">
-                        <a href="./main-table" class="btn btn-primary stretched-link">Tabla principal</a>
+                        <a href="./main-table" class="m-b-md">Tabla principal</a>
                 </div>
             </div>
         </div>

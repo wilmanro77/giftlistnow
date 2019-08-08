@@ -41,22 +41,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 my-2">
-                                    <div class="card" style="width: 18rem;">
-                                        
-                                        <div class="card-body">
-                                            <form action="{{route('find-code')}}" method="POST">
-                                                @csrf <!-- {{ csrf_field() }} -->
-
-                                                <h5 class="card-title">Code</h5>
-                                                <div class="active-green-3 active-green-4 mb-4">
-                                                  <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="codeSearch">
-                                                </div>
-                                                <input type="submit" name="Search" class="btn btn-primary">
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

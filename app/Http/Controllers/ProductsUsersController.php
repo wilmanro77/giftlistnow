@@ -130,4 +130,13 @@ class ProductsUsersController extends Controller
 
     }
 
+    public function process(Request $request)
+    {
+        //
+        return json_encode($request->product);
+
+    }
+
+    
+
 }
