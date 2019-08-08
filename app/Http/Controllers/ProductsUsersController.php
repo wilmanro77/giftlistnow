@@ -4,7 +4,7 @@ namespace GiftListNow\Http\Controllers;
 
 use GiftListNow\products_users;
 use Illuminate\Http\Request;
-
+use DB;
 class ProductsUsersController extends Controller
 {
     /**
@@ -15,6 +15,11 @@ class ProductsUsersController extends Controller
     public function index()
     {
         //
+        $productos = DB::table('products_users')
+            ->join('productos', 'products_users.id_producto', '=', 'productos.id')
+            ->select('productos.*')
+            ->get();
+            return view("userTable", ["productos"=>$productos]);
     }
 
     /**
@@ -48,7 +53,7 @@ class ProductsUsersController extends Controller
         }
         //dd($request);
         
-        return redirect('/main-tabla');
+        return redirect('/user-products');
 
     }
 

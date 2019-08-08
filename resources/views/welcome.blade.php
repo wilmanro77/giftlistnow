@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-
+                        <a href="./main-tabla" class="btn btn-primary stretched-link">Tabla principal</a>
                 </div>
             </div>
         </div>
