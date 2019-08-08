@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace GiftListNow\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
