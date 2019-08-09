@@ -19,9 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource("/products", "ProductController");
-Route::resource("/giftlist", "UserProductsListsController")
-	 ; //login required
-Route::post("/find-by-code", "ProductsUsersController@findByCode")
-	 ->name('find-code');//login required
-Route::post("/process", "ProductsUsersController@process")
-	 ->name('process'); //login required
+Route::resource("/giftlist", "UserProductsListController"); //login required
+Route::post("/find-by-code", "ProductsUsersController@findByCode")->name('find-code');//login required
+Route::post("/process", "ProductsUsersController@process")->name('process'); //login required

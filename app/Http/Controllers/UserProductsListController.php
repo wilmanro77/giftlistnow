@@ -5,7 +5,7 @@ namespace GiftListNow\Http\Controllers;
 use GiftListNow\User_products_list;
 use Illuminate\Http\Request;
 use DB;
-class UserProductsListsController extends Controller
+class UserProductsListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class UserProductsListsController extends Controller
             ->where("user_products_list.user_id", "=", auth()->user()->id)
             ->select('products.*')
             ->get();
-            return view("userTable", ["products"=>$products]);
+            return view("giftlist", ["products"=>$products]);
     }
 
     /**
@@ -77,7 +77,7 @@ class UserProductsListsController extends Controller
             ->where("user_products_list.user_id", "=", $user->id)
             ->select('products.*')
             ->get();
-            return view("userTable", ["products"=>$products]);
+            return view("giftlist", ["products"=>$products]);
     }
 
     /**
@@ -126,7 +126,7 @@ class UserProductsListsController extends Controller
             ->where("user_products_list.user_id", "=", $user->id)
             ->select('products.*')
             ->get();
-            return view("userTable", ["products"=>$products]);
+            return view("giftlist", ["products"=>$products]);
 
     }
 
