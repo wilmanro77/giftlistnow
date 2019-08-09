@@ -20,7 +20,7 @@ class ProductsUsersController extends Controller
             ->where("products_users.id_user", "=", auth()->user()->id)
             ->select('products.*')
             ->get();
-            return view("userTable", ["products"=>$products]);
+            return view("giftlist", ["products"=>$products]);
     }
 
     /**
@@ -77,7 +77,7 @@ class ProductsUsersController extends Controller
             ->where("products_users.id_user", "=", $user->id)
             ->select('products.*')
             ->get();
-            return view("userTable", ["products"=>$products]);
+            return view("giftlist", ["products"=>$products]);
     }
 
     /**
@@ -126,7 +126,7 @@ class ProductsUsersController extends Controller
             ->where("products_users.id_user", "=", $user->id)
             ->select('products.*')
             ->get();
-            return view("userTable", ["products"=>$products]);
+            return view("giftlist", ["products"=>$products]);
 
     }
 

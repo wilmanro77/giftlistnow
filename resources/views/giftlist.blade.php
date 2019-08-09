@@ -14,8 +14,10 @@
                     <thead class="">
                         <th  scope="col">id</th>
                         <th  scope="col">Producto</th>
-                        <th  scope="col">precio</th>
-                        <th  scope="col">elegir</th>
+                        <th  scope="col">Description</th>
+                        <th  scope="col">Image</th>
+                        <th  scope="col">Precio</th>
+                        <th  scope="col">Elegir</th>
 
                     </thead>
                     <tbody>
@@ -23,6 +25,8 @@
                         <tr>
                             <td>{{$producto->id }}</td>
                             <td>{{$producto->name }}</td>
+                            <td>{{$producto->description }}</td>
+                            <td><img src="{{$producto->image }}" alt="{{$producto->name }}" class="img-thumbnail"></td>
                             <td>{{$producto->price }}</td>
                             <td><input type="checkbox" name="product[]" value="{{ $producto->id }}" class="btn btn-info"></td>
 
