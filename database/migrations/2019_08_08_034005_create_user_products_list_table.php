@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserProductsListsTable extends Migration
+class CreateUserProductsListTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateUserProductsListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_products_lists', function (Blueprint $table) {
+        Schema::create('user_products_list', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger("product_status_lists_id");
-            $table->foreign('product_status_lists_id')->references('id')->on('product_status_lists')->onDelete('cascade');
+            $table->unsignedBigInteger("product_statuses_list_id");
+            $table->foreign('product_statuses_list_id')->references('id')->on('product_statuses_list')->onDelete('cascade');
             $table->unsignedBigInteger("product_id");
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->unsignedBigInteger("user_id");
@@ -32,6 +32,6 @@ class CreateUserProductsListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_products_lists');
+        Schema::dropIfExists('user_products_list');
     }
 }

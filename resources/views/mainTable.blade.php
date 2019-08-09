@@ -4,12 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <a class="btn btn-info stretched-link my-2" href="{{route('main-table.create')}}">Añadir Producto</a>
+            <a class="btn btn-info stretched-link my-2" href="{{route('products.create')}}">Añadir Producto</a>
         </div>
         <div class="col-md-12">
                 <h1>Main Table</h1>
 
-            <form action="{{route('user-products.store')}}" method="POST">
+            <form action="{{route('giftlist.store')}}" method="POST">
                     @csrf <!-- {{ csrf_field() }} -->
 
                     <div class="form-group">

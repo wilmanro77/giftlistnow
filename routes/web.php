@@ -18,8 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource("/main-table", "ProductsController");
-Route::resource("/user-products", "ProductsUsersController")
+Route::resource("/products", "ProductController");
+Route::resource("/giftlist", "UserProductsListsController")
 	 ; //login required
 Route::post("/find-by-code", "ProductsUsersController@findByCode")
 	 ->name('find-code');//login required

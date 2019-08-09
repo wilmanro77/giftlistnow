@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Your event code is <a href="{{ route('user-products.show', auth()->user()->event_code) }}">{{auth()->user()->event_code}}</a></div>
+                <div class="card-header">Your event code is <a href="{{ route('giftlist.show', auth()->user()->event_code) }}">{{auth()->user()->event_code}}</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -27,7 +27,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">Create or Edit Gift List</h5>
                                             <p class="card-text">Lest go to create your gift list.</p>
-                                            <a href="/main-table" class="btn btn-primary">GO</a>
+                                            <a href="/products" class="btn btn-primary">GO</a>
                                         </div>
                                     </div>
                                 </div>

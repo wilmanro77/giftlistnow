@@ -4,7 +4,7 @@ namespace GiftListNow;
 
 use Illuminate\Database\Eloquent\Model;
 
-class products_users extends Model
+class User_products_list extends Model
 {
     //
 }
